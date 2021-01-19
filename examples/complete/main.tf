@@ -1,6 +1,6 @@
 module "aws_cognito_user_pool_complete_example" {
 
-  source = "../modules/terraform-aws-cognito-user-pool"
+  source = "lgallard/cognito-user-pool/aws"
 
   user_pool_name             = "mypool_complete"
   alias_attributes           = ["email", "phone_number"]
@@ -14,10 +14,9 @@ module "aws_cognito_user_pool_complete_example" {
   }
 
   admin_create_user_config = {
-    unused_account_validity_days = 9
-    email_message                = "Dear {username}, your verification code is {####}."
-    email_subject                = "Here, your verification code baby"
-    sms_message                  = "Your username is {username} and temporary password is {####}."
+    email_message = "Dear {username}, your verification code is {####}."
+    email_subject = "Here, your verification code baby"
+    sms_message   = "Your username is {username} and temporary password is {####}."
   }
 
   device_configuration = {
