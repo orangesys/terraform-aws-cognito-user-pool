@@ -197,7 +197,7 @@ resource "aws_cognito_user_pool" "pool" {
       schema,
       account_recovery_setting,
     ]
-    prevent_destroy = true
+    # prevent_destroy = true
   }
 }
 
