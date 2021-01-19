@@ -175,19 +175,19 @@ resource "aws_cognito_user_pool" "pool" {
   }
 
   # account_recovery_setting
-  dynamic "account_recovery_setting" {
-    for_each = length(var.recovery_mechanisms) == 0 ? [] : [1]
-    content {
-      # recovery_mechanism
-      dynamic "recovery_mechanism" {
-        for_each = var.recovery_mechanisms
-        content {
-          name     = lookup(recovery_mechanism.value, "name")
-          priority = lookup(recovery_mechanism.value, "priority")
-        }
-      }
-    }
-  }
+  # dynamic "account_recovery_setting" {
+  #   for_each = length(var.recovery_mechanisms) == 0 ? [] : [1]
+  #   content {
+  #     # recovery_mechanism
+  #     dynamic "recovery_mechanism" {
+  #       for_each = var.recovery_mechanisms
+  #       content {
+  #         name     = lookup(recovery_mechanism.value, "name")
+  #         priority = lookup(recovery_mechanism.value, "priority")
+  #       }
+  #     }
+  #   }
+  # }
 
   # tags
   tags = var.tags
