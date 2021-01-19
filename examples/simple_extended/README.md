@@ -1,3 +1,5 @@
+# This is the simple example, but extended
+```
 module "aws_cognito_user_pool_simple_extended_example" {
 
   source = "../modules/terraform-aws-cognito-user-pool"
@@ -68,3 +70,4 @@ module "aws_cognito_user_pool_simple_extended_example" {
     Terraform   = true
   }
 }
+```

@@ -1,3 +1,49 @@
+## 0.8.0  (December 28, 2020)
+
+ENHANCEMENTS:
+
+* Add support for support `account_recovery_setting`
+
+## 0.7.1  (December 11, 2020)
+
+FIX:
+
+* Ignore schema changes and prevent pool destruction
+
+## 0.7.0  (November 25, 2020)
+
+ENHANCEMENTS:
+
+* Add `from_email_address`
+
+## 0.6.2  (August 13, 2020)
+
+FIXES:
+
+* Update CHANGELOG
+
+## 0.6.1  (August 13, 2020)
+
+ENHANCEMENTS:
+
+* Change source in examples to use Terraform format
+
+FIXES:
+
+* Add `username_configuration` dynamic block to avoid forcing a new resource when importing a user pool
+* Remove `case_sensitive` variable. Use the `username_configuration` map variable to devine the `case_sensitive` attribute
+
+UPDATES:
+
+* Updated README and examples
+
+## 0.5.0  (July 31, 2020)
+
+FIXES:
+
+* Depcreate support to `unused_account_validity_days`
+* Update README and examples removing any referece to the deprecated `unused_account_validity_days` field
+
 ## 0.4.0 (May 2, 2020)
 
 ENHANCEMENTS:

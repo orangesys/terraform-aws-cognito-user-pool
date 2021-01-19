@@ -18,6 +18,13 @@ variable "email_verification_subject" {
   default     = null
 }
 
+# username_configuration
+variable "username_configuration" {
+  description = "The Username Configuration. Seting `case_sesiteve` specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs"
+  type        = map
+  default     = {}
+}
+
 # admin_create_user_config
 variable "admin_create_user_config" {
   description = "The configuration for AdminCreateUser requests"
@@ -66,12 +73,6 @@ variable "username_attributes" {
   description = "Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up. Conflicts with `alias_attributes`"
   type        = list
   default     = null
-}
-
-variable "case_sensitive" {
-  description = "Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs"
-  type        = bool
-  default     = true
 }
 
 variable "auto_verified_attributes" {
@@ -141,6 +142,12 @@ variable "email_configuration_email_sending_account" {
   description = "Instruct Cognito to either use its built-in functional or Amazon SES to send out emails. Allowed values: `COGNITO_DEFAULT` or `DEVELOPER`"
   type        = string
   default     = "COGNITO_DEFAULT"
+}
+
+variable "email_configuration_from_email_address" {
+  description = "Sender’s email address or sender’s display name with their email address (e.g. `john@example.com`, `John Smith <john@example.com>` or `\"John Smith Ph.D.\" <john@example.com>)`. Escaped double quotes are required around display names that contain certain characters as specified in RFC 5322"
+  type        = string
+  default     = null
 }
 
 # lambda_config
@@ -528,4 +535,13 @@ variable "resource_server_scope_description" {
   description = "The scope description"
   type        = string
   default     = null
+}
+
+#
+# Account Recovery Setting
+#
+variable "recovery_mechanisms" {
+  description = "The list of Account Recovery Options"
+  type        = list
+  default     = []
 }
